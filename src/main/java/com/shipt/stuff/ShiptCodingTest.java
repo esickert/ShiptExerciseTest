@@ -29,7 +29,7 @@ public class ShiptCodingTest {
     @Test
     public void shiptCodingTest() throws IOException, Exception {
 
-        String url = "http://www.shipt.com ";
+        String url = "http://www.shipt.com";
         String email = "qatest@shipt.com";
         String passwd= "Sh1pt123!";
         String item = "coke zero";
@@ -57,9 +57,19 @@ public class ShiptCodingTest {
         search.sendKeys(Keys.ENTER);
 
   //      WebElement image = driver.findElement(By.tagName("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[1]/img"));
-        WebElement image = driver.findElement(By.tagName("img"));
+        List<WebElement> images = driver.findElements(By.tagName("img"));
+        System.out.println("Number of images: " + images.size());
+ //       for(WebElement temp: images){
+ //           System.out.println(temp);
 
 
+/*        for(int i = 0; i <= images.size(); i++) {
+            if (!(images.get(i).getAttribute("src").equals("")) && !(images.get(i).getAttribute("src")== null))  {
+                System.out.println(images.get(i).getAttribute("src"));
+            }
+        }
+
+*/
      //   WebElement image = driver.findElement(By.tagName("src"));
 
 //        List links=driver.findElements(By.tagName("img"));
@@ -69,8 +79,8 @@ public class ShiptCodingTest {
      //   }
 //        String picture = image.getAttribute("src");
 
-        String test = image.getAttribute("img");
-        System.out.println(test);
+//        String test = images.getAttribute("img");                            //problem here
+//        System.out.println(test);
 
     }
 /*        @Test
