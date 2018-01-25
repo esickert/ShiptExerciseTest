@@ -32,7 +32,7 @@ public class ShiptCodingTest {
         String url = "http://www.shipt.com ";
         String email = "qatest@shipt.com";
         String passwd= "Sh1pt123!";
-        String item = "coke";
+        String item = "coke zero";
 
         System.setProperty("webdriver.chrome.driver","c://SeleniumDrivers//chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -56,7 +56,10 @@ public class ShiptCodingTest {
         search.sendKeys(item);
         search.sendKeys(Keys.ENTER);
 
-        WebElement image = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[1]/img"));
+  //      WebElement image = driver.findElement(By.tagName("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[1]/img"));
+        WebElement image = driver.findElement(By.tagName("img"));
+
+
      //   WebElement image = driver.findElement(By.tagName("src"));
 
 //        List links=driver.findElements(By.tagName("img"));
@@ -66,7 +69,8 @@ public class ShiptCodingTest {
      //   }
 //        String picture = image.getAttribute("src");
 
-        String test = image.getAttribute("src");
+        String test = image.getAttribute("img");
+        System.out.println(test);
 
     }
 /*        @Test
