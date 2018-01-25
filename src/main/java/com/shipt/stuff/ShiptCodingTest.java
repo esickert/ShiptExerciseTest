@@ -1,5 +1,6 @@
 package com.shipt.stuff;
 
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,12 +9,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import org.sikuli.script.App;
+
+import org.sikuli.script.FindFailed;
+
+import org.sikuli.script.Pattern;
+
+import org.sikuli.script.Screen;
+
+
+import java.io.IOException;
+
 import static java.lang.Thread.sleep;
 
 public class ShiptCodingTest {
 
     @Test
-    public void shiptCodingTest() throws Exception {
+    public void shiptCodingTest() throws IOException, Exception {
 
         String url = "http://www.shipt.com ";
         String email = "qatest@shipt.com";
@@ -43,12 +55,36 @@ public class ShiptCodingTest {
         search.sendKeys(Keys.ENTER);
 
         WebElement name = driver.findElement(By.className("wrap grid-product-name ng-binding grid-product-name-sale"));
-        name.getAttribute("title");
+        name.click();
 
-        System.out.println(name);
+ //       System.out.println(name);
 
     }
+        @Test
+        public void testsikuli()    {
 
+            System.setProperty("webdriver.chrome.driver","c://SeleniumDrivers//chromedriver.exe");
+            WebDriver driver = new ChromeDriver();
+            driver.navigate().to("http://www.google.com");
+
+            //Create and initialize an instance of Screen object
+            Screen screen = new Screen();
+
+            screen.find()
+
+            //Add image path
+            Pattern image = new Pattern("C:\\temp\\searchButton.png");
+
+            //Wait 10ms for image
+            try {
+                screen.wait(image, 10);
+//Click on the image
+                screen.click(image);
+            }
+            catch(Exception e){
+                System.out.println("ERROR- problem with sikuli");
+            }
+        }
 
 }
 //How to get the link copy
