@@ -19,8 +19,10 @@ import org.sikuli.script.Screen;
 
 
 import java.io.IOException;
+import java.util.List;
 
 import static java.lang.Thread.sleep;
+import static javax.swing.text.html.CSS.getAttribute;
 
 public class ShiptCodingTest {
 
@@ -54,13 +56,20 @@ public class ShiptCodingTest {
         search.sendKeys(item);
         search.sendKeys(Keys.ENTER);
 
-        WebElement name = driver.findElement(By.className("wrap grid-product-name ng-binding grid-product-name-sale"));
-        name.click();
+        WebElement image = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[1]/img"));
+     //   WebElement image = driver.findElement(By.tagName("src"));
 
- //       System.out.println(name);
+//        List links=driver.findElements(By.tagName("img"));
+        // this will display list of all images exist on page
+//        for(WebElement ele:links){
+//            System.out.println(ele.getAttribute("src"));
+     //   }
+//        String picture = image.getAttribute("src");
+
+        String test = image.getAttribute("src");
 
     }
-        @Test
+/*        @Test
         public void testsikuli()    {
 
             System.setProperty("webdriver.chrome.driver","c://SeleniumDrivers//chromedriver.exe");
@@ -85,7 +94,7 @@ public class ShiptCodingTest {
                 System.out.println("ERROR- problem with sikuli");
             }
         }
-
+*/
 }
 //How to get the link copy
 //<p class="wrap grid-product-name ng-binding" ng-class="product.on_sale ? 'grid-product-name-sale':''"> Coca-Cola </p>
