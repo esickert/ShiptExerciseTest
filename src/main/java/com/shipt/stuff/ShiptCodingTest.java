@@ -30,7 +30,7 @@ public class ShiptCodingTest {
         WebDriver driver = new ChromeDriver();
         driver.navigate().to(url);
 
-  //      driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.findElement(By.cssSelector(".button-secondary")).click();
 
         WebElement userAddressBox = driver.findElement(By.cssSelector("input.ng-valid-email"));
@@ -68,7 +68,8 @@ public class ShiptCodingTest {
         WebElement cart = driver.findElement(By.cssSelector("#homeIonContent > div > div > shipt-web-header > div > div > web-cart-button > button"));
         cart.click();
 
+//        WebElement cartName = driver.findElement(By.xpath("/html/body/ion-nav-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view[2]/ion-content/div/div/div[1]/div[1]/div/div[2]/div[3]/div/p"));
+//        System.out.println(cartName.getText());
+
     }
 }
-
-
