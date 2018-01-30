@@ -1,16 +1,13 @@
 package com.shipt.stuff;
 
-
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-
 import java.io.IOException;
 import java.util.List;
-
 import static java.awt.SystemColor.info;
 import static java.lang.Thread.sleep;
 import static javax.swing.text.html.CSS.getAttribute;
@@ -30,7 +27,7 @@ public class ShiptCodingTest {
         WebDriver driver = new ChromeDriver();
         driver.navigate().to(url);
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
         driver.findElement(By.cssSelector(".button-secondary")).click();
 
         WebElement userAddressBox = driver.findElement(By.cssSelector("input.ng-valid-email"));
@@ -63,10 +60,11 @@ public class ShiptCodingTest {
         System.out.println(productName1);
 
         coke.click();
-        sleep(5000);
+//        sleep(5000);
 
-        WebElement cart = driver.findElement(By.cssSelector("#homeIonContent > div > div > shipt-web-header > div > div > web-cart-button > button"));
-        cart.click();
+//       WebElement cart = driver.findElement(By.cssSelector("body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-view > ion-view.web-shopping-cart.pane > ion-content > div > div > div.col.col-67 > div.cart-items-area > div > div.item.item-thumbnail-left.item-button-right.cart-list-item > div.row > div > p"));
+
+//       cart.click();
 
 //        WebElement cartName = driver.findElement(By.xpath("/html/body/ion-nav-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view[2]/ion-content/div/div/div[1]/div[1]/div/div[2]/div[3]/div/p"));
 //        System.out.println(cartName.getText());
