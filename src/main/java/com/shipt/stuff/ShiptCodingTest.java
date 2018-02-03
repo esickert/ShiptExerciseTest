@@ -64,6 +64,8 @@ public class ShiptCodingTest {
        WebElement cart = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/shipt-web-header/div/div/web-cart-button/button"));
        cart.click();
 
+       sleep(5000);
+
 //        WebElement cartName = driver.findElement(By.xpath("/html/body/ion-nav-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view[2]/ion-content/div/div/div[1]/div[1]/div/div[2]/div[3]/div/p"));
 //        System.out.println(cartName.getText());
 
