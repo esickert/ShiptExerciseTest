@@ -58,13 +58,11 @@ public class ShiptCodingTest {
         WebElement name = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/p"));
         productName1 = name.getText();
         System.out.println(productName1);
-
         coke.click();
-//        sleep(5000);
+        sleep(5000);
 
-//       WebElement cart = driver.findElement(By.cssSelector("body > ion-nav-view > ion-side-menus > ion-side-menu-content > ion-nav-view > ion-view.web-shopping-cart.pane > ion-content > div > div > div.col.col-67 > div.cart-items-area > div > div.item.item-thumbnail-left.item-button-right.cart-list-item > div.row > div > p"));
-
-//       cart.click();
+       WebElement cart = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/shipt-web-header/div/div/web-cart-button/button"));
+       cart.click();
 
 //        WebElement cartName = driver.findElement(By.xpath("/html/body/ion-nav-view/ion-side-menus/ion-side-menu-content/ion-nav-view/ion-view[2]/ion-content/div/div/div[1]/div[1]/div/div[2]/div[3]/div/p"));
 //        System.out.println(cartName.getText());
