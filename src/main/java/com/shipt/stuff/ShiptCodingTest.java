@@ -20,14 +20,15 @@ public class ShiptCodingTest {
         String item = "milk";
         String productName1;
 
-        int count = 0;
-//        while (count <= 5) {
+        int count = 1;
+       while (count <= 20) {
             System.out.println(count);
             System.setProperty("webdriver.chrome.driver", "c://SeleniumDrivers//chromedriver.exe");
             WebDriver driver = new ChromeDriver();
+            driver.manage().window().maximize();
             driver.navigate().to(url);
 
-//        driver.manage().window().maximize();
+
             driver.findElement(By.cssSelector(".button-secondary")).click();
 
             WebElement userAddressBox = driver.findElement(By.cssSelector("input.ng-valid-email"));
@@ -73,8 +74,8 @@ public class ShiptCodingTest {
 
             Assert.assertThat("confirm names are same", productName1, is(productName2));
             sleep(5000);
-//            driver.quit();
-//            count++;
-//        }
+            driver.quit();
+            count++;
+        }
     }
 }
