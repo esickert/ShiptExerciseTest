@@ -20,7 +20,7 @@ public class ShiptCodingTest {
         String item = "milk";
         String productName1;
 
-        int count = 1;
+        int count = 0;
        while (count <= 20) {
             System.out.println(count);
             System.setProperty("webdriver.chrome.driver", "c://SeleniumDrivers//chromedriver.exe");
