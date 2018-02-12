@@ -20,9 +20,9 @@ public class ShiptCodingTest {
         String item = "milk";
         String productName1;
 
-        int count = 0;
-       while (count <= 20) {
-            System.out.println(count);
+ //       int count = 0;
+//       while (count <= 20) {
+//            System.out.println(count);
             System.setProperty("webdriver.chrome.driver", "c://SeleniumDrivers//chromedriver.exe");
             WebDriver driver = new ChromeDriver();
             driver.manage().window().maximize();
@@ -74,8 +74,7 @@ public class ShiptCodingTest {
 
             Assert.assertThat("confirm names are same", productName1, is(productName2));
             sleep(5000);
-            driver.quit();
-            count++;
+//            driver.quit();
+ //           count++;
         }
-    }
 }
