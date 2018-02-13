@@ -72,7 +72,7 @@ public class ShiptCodingTest {
             String productName2 = name2.getText();
             System.out.println(productName2);
 
-            Assert.assertThat("confirm names are same", productName1, is(productName2));
+            Assert.assertThat("confirm names are same in inventory and checkout", productName1, is(productName2));
             sleep(5000);
 //            driver.quit();
  //           count++;
