@@ -10,43 +10,45 @@ import static java.lang.Thread.sleep;
 import static org.hamcrest.core.Is.is;
 
 public class ShiptCoding {
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws Exception {
+        for(int i = 0; i <3; i++) {
+            shiptLogin();
+        }
 
-        shiptLogin();
     }
 
-        public static void shiptLogin()  {
+    public static void shiptLogin() throws Exception {
 
-            String url = "http://www.shipt.com";
-            String email = "qatest@shipt.com";
-            String passwd = "Sh1pt123!";
-            String item = "milk";
-            String productName1;
+        String url = "http://www.shipt.com";
+        String email = "qatest@shipt.com";
+        String passwd = "Sh1pt123!";
+        String item = "milk";
+        String productName1;
 //        String productName2
 
-            int count = 0;
-            while (count <= 20) {
-                System.out.println(count);
-                System.setProperty("webdriver.chrome.driver", "c://SeleniumDrivers//chromedriver.exe");
-                WebDriver driver = new ChromeDriver();
+//        int count = 0;
+//        while (count <= 2) {
+//            System.out.println(count);
+            System.setProperty("webdriver.chrome.driver", "c://SeleniumDrivers//chromedriver.exe");
+            WebDriver driver = new ChromeDriver();
 //            driver.manage().window().maximize();
-                driver.navigate().to(url);
+            driver.navigate().to(url);
 
 
-                driver.findElement(By.cssSelector(".button-secondary")).click();
+            driver.findElement(By.cssSelector(".button-secondary")).click();
 
-                WebElement userAddressBox = driver.findElement(By.cssSelector("input.ng-valid-email"));
-                userAddressBox.click();
-                userAddressBox.sendKeys(email);
+            WebElement userAddressBox = driver.findElement(By.cssSelector("input.ng-valid-email"));
+            userAddressBox.click();
+            userAddressBox.sendKeys(email);
 
-                WebElement passwdBox = driver.findElement(By.cssSelector("input.ng-invalid-required"));
-                passwdBox.click();
-                passwdBox.sendKeys(passwd);
+            WebElement passwdBox = driver.findElement(By.cssSelector("input.ng-invalid-required"));
+            passwdBox.click();
+            passwdBox.sendKeys(passwd);
 
-                driver.findElement(By.cssSelector("#start_shopping_login_button")).click();
-          }
+            driver.findElement(By.cssSelector("#start_shopping_login_button")).click();
 
-/*            sleep(5000);
+
+            sleep(5000);
             WebElement search = driver.findElement(By.cssSelector("#search"));
             search.click();
 
@@ -58,18 +60,18 @@ public class ShiptCoding {
             sleep(3000);
             page.click();
 
-            WebElement coke = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[2]/button[2]"));
-            String dietCoke = coke.getText();  //it's failing here!!!!!!!!!!!!!!
-            System.out.println("This is the end " + dietCoke);
+ //           WebElement coke = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[2]/button[2]"));
+ //           String dietCoke = coke.getText();  //it's failing here!!!!!!!!!!!!!!
+ //           System.out.println("This is the end " + dietCoke);
 
             WebElement name = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/p"));
             productName1 = name.getText();
             System.out.println(productName1);
-            coke.click();
+//            coke.click();
             sleep(5000);
 
             WebElement cart = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/shipt-web-header/div/div/web-cart-button/button"));
-            System.out.println(cart.getText());
+//            System.out.println(cart.getText());
             cart.click();
             sleep(5000);
 
@@ -77,12 +79,21 @@ public class ShiptCoding {
             String productName2 = name2.getText();
             System.out.println(productName2);
 
+
+            
             Assert.assertThat("confirm names are same in inventory and checkout", productName1, is(productName2));
             sleep(5000);
-            driver.quit();
-            count++;
-*/
+//            driver.quit();
+//            count++;
 
+        //********************************************************************************************
+        //    WebElement button = driver.findElement(By.tagName("button"));
+        //    button.click();
+        //********************************************************************************************
+        driver.navigate().back();
+        sleep(5000);
+        driver.quit();
         } // end of method shiptLogin
 
-} //end of shipt class
+    } //end of shipt class
+
