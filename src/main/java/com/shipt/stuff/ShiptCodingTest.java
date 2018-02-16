@@ -19,13 +19,14 @@ public class ShiptCodingTest {
         String passwd = "Sh1pt123!";
         String item = "milk";
         String productName1;
+//        String productName2
 
  //       int count = 0;
 //       while (count <= 20) {
 //            System.out.println(count);
             System.setProperty("webdriver.chrome.driver", "c://SeleniumDrivers//chromedriver.exe");
             WebDriver driver = new ChromeDriver();
-            driver.manage().window().maximize();
+//            driver.manage().window().maximize();
             driver.navigate().to(url);
 
 
@@ -54,8 +55,7 @@ public class ShiptCodingTest {
 
             WebElement coke = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[2]/button[2]"));
             String dietCoke = coke.getText();  //it's failing here!!!!!!!!!!!!!!
-            System.out.println(dietCoke);
-            coke.click();
+            System.out.println("This is the end " + dietCoke);
 
             WebElement name = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/p"));
             productName1 = name.getText();
@@ -76,5 +76,9 @@ public class ShiptCodingTest {
             sleep(5000);
 //            driver.quit();
  //           count++;
+
+        //**************************************************************************************************
+            WebElement home = driver.findElement(By.className("button.button-icon.icon.shipt-logo-button"));
+            home.click();
         }
 }
