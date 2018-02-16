@@ -9,39 +9,44 @@ import java.io.IOException;
 import static java.lang.Thread.sleep;
 import static org.hamcrest.core.Is.is;
 
-public class ShiptCodingTest {
+public class ShiptCoding {
+    public static void main(String[] args)  {
 
-    @Test
-    public void shiptCodingTest() throws IOException, Exception {
+        shiptLogin();
+    }
 
-        String url = "http://www.shipt.com";
-        String email = "qatest@shipt.com";
-        String passwd = "Sh1pt123!";
-        String item = "milk";
-        String productName1;
+        public static void shiptLogin()  {
+
+            String url = "http://www.shipt.com";
+            String email = "qatest@shipt.com";
+            String passwd = "Sh1pt123!";
+            String item = "milk";
+            String productName1;
 //        String productName2
 
- //       int count = 0;
-//       while (count <= 20) {
-//            System.out.println(count);
-            System.setProperty("webdriver.chrome.driver", "c://SeleniumDrivers//chromedriver.exe");
-            WebDriver driver = new ChromeDriver();
+            int count = 0;
+            while (count <= 20) {
+                System.out.println(count);
+                System.setProperty("webdriver.chrome.driver", "c://SeleniumDrivers//chromedriver.exe");
+                WebDriver driver = new ChromeDriver();
 //            driver.manage().window().maximize();
-            driver.navigate().to(url);
+                driver.navigate().to(url);
 
 
-            driver.findElement(By.cssSelector(".button-secondary")).click();
+                driver.findElement(By.cssSelector(".button-secondary")).click();
 
-            WebElement userAddressBox = driver.findElement(By.cssSelector("input.ng-valid-email"));
-            userAddressBox.click();
-            userAddressBox.sendKeys(email);
+                WebElement userAddressBox = driver.findElement(By.cssSelector("input.ng-valid-email"));
+                userAddressBox.click();
+                userAddressBox.sendKeys(email);
 
-            WebElement passwdBox = driver.findElement(By.cssSelector("input.ng-invalid-required"));
-            passwdBox.click();
-            passwdBox.sendKeys(passwd);
+                WebElement passwdBox = driver.findElement(By.cssSelector("input.ng-invalid-required"));
+                passwdBox.click();
+                passwdBox.sendKeys(passwd);
 
-            driver.findElement(By.cssSelector("#start_shopping_login_button")).click();
-            sleep(5000);
+                driver.findElement(By.cssSelector("#start_shopping_login_button")).click();
+          }
+
+/*            sleep(5000);
             WebElement search = driver.findElement(By.cssSelector("#search"));
             search.click();
 
@@ -74,11 +79,10 @@ public class ShiptCodingTest {
 
             Assert.assertThat("confirm names are same in inventory and checkout", productName1, is(productName2));
             sleep(5000);
-//            driver.quit();
- //           count++;
+            driver.quit();
+            count++;
+*/
 
-        //**************************************************************************************************
-            WebElement home = driver.findElement(By.className("button.button-icon.icon.shipt-logo-button"));
-            home.click();
-        }
-}
+        } // end of method shiptLogin
+
+} //end of shipt class
