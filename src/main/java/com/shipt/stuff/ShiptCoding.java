@@ -11,7 +11,7 @@ import static org.hamcrest.core.Is.is;
 
 public class ShiptCoding {
     public static void main(String[] args) throws Exception {
-        for(int i = 0; i <3; i++) {
+        for(int i = 0; i <2; i++) {
             shiptLogin();
         }
 
@@ -60,14 +60,14 @@ public class ShiptCoding {
             sleep(3000);
             page.click();
 
- //           WebElement coke = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[2]/button[2]"));
+            WebElement coke = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[2]/button[2]"));
  //           String dietCoke = coke.getText();  //it's failing here!!!!!!!!!!!!!!
  //           System.out.println("This is the end " + dietCoke);
 
             WebElement name = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/p"));
             productName1 = name.getText();
             System.out.println(productName1);
-//            coke.click();
+            coke.click();                                                                                 //this is needed to add the iten to the checkout
             sleep(5000);
 
             WebElement cart = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/shipt-web-header/div/div/web-cart-button/button"));
@@ -80,7 +80,7 @@ public class ShiptCoding {
             System.out.println(productName2);
 
 
-            
+
             Assert.assertThat("confirm names are same in inventory and checkout", productName1, is(productName2));
             sleep(5000);
 //            driver.quit();
