@@ -92,12 +92,12 @@ public class ShiptCoding {
                 button.click();
             else {
                 System.out.println("Element is not accesible or visible");
-                System.exit(0);
+                driver.navigate().back();
             }
 
 
 
-        driver.navigate().back();
+//        driver.navigate().back();
         sleep(5000);
         driver.quit();
         } // end of method shiptLogin
