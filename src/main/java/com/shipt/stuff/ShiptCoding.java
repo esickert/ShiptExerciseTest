@@ -86,14 +86,26 @@ public class ShiptCoding {
 //            driver.quit();
 //            count++;
 
-        //********************************************************************************************
-        //    WebElement button = driver.findElement(By.tagName("button"));
-        //    button.click();
-        //********************************************************************************************
+
+            WebElement button = driver.findElement(By.tagName("button"));
+            if (button.isDisplayed())
+                button.click();
+            else {
+                System.out.println("Element is not accesible or visible");
+                System.exit(0);
+            }
+
+
+
         driver.navigate().back();
         sleep(5000);
         driver.quit();
         } // end of method shiptLogin
+
+        public void changeStore()    {
+
+        
+        }
 
     } //end of shipt class
 
