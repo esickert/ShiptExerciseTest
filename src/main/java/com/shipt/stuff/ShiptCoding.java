@@ -91,7 +91,7 @@ public class ShiptCoding {
             if (button.isDisplayed())
                 button.click();
             else {
-                System.out.println("Element is not accesible or visible. Using navigate back");
+                System.out.println("Element is not accesible or visible. Using driver.navigate back");
                 driver.navigate().back();
             }
 
