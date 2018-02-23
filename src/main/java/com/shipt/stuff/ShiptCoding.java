@@ -11,9 +11,9 @@ import static org.hamcrest.core.Is.is;
 
 public class ShiptCoding {
     public static void main(String[] args) throws Exception {
-        for(int i = 0; i <2; i++) {
+//        for(int i = 0; i <2; i++) {
             shiptLogin();
-        }
+  //      }
 
     }
 
@@ -91,21 +91,32 @@ public class ShiptCoding {
             if (button.isDisplayed())
                 button.click();
             else {
-                System.out.println("Element is not accesible or visible");
+                System.out.println("Element is not accesible or visible. Using navigate back");
                 driver.navigate().back();
             }
 
+ //           WebElement searchCatagory = driver.findElement(By.cssSelector("#homeIonContent > div > div > shipt-web-subheader > div > div > button.change-address-web-header.address-bar-icon.button.button-icon.icon.dark"));
+ //           searchCatagory.click();
+//            searchCatagory.sendKeys("eggs");
+            WebElement searchCatagory = driver.findElement(By.cssSelector("#homeIonContent > div > div > shipt-web-subheader > div > div > button:nth-child(1)"));
+            if (searchCatagory.isDisplayed()) {
+                sleep(5000);
+                System.out.println("click on me... click on me");
+                searchCatagory.click();
+            }
+            else
+                System.out.println("Catagory is not visible");
 
-
+            WebElement beer = driver.findElement(By.linkText("Beer"));
 //        driver.navigate().back();
-        sleep(5000);
-        driver.quit();
+ //       sleep(5000);
+//        driver.quit();
         } // end of method shiptLogin
 
-        public void changeStore()    {
+//        public void changeStore()    {
 
         
-        }
+ //       }
 
     } //end of shipt class
 
