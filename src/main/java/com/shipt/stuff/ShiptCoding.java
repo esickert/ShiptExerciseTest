@@ -67,7 +67,7 @@ public class ShiptCoding {
             WebElement name = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/p"));
             productName1 = name.getText();
             System.out.println(productName1);
-            coke.click();                                                                                 //this is needed to add the iten to the checkout
+            coke.click();                                                                        //this is needed to add the iten to the checkout
             sleep(5000);
 
             WebElement cart = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/shipt-web-header/div/div/web-cart-button/button"));
