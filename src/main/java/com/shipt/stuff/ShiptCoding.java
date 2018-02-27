@@ -107,7 +107,8 @@ public class ShiptCoding {
             else
                 System.out.println("Catagory is not visible");
 
-//            WebElement beer = driver.findElement(By.linkText("Beer"));  this doesn't work!!!!!
+ //           WebElement beer = driver.findElement(By.linkText("Beer"));  //this doesn't work!!!!!
+ //           System.out.println(beer.isDisplayed());
 //        driver.navigate().back();
  //       sleep(5000);
 //        driver.quit();
