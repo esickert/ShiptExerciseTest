@@ -6,7 +6,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
+import java.util.List;
+
 import static java.lang.Thread.sleep;
+import static javax.swing.text.html.CSS.getAttribute;
 import static org.hamcrest.core.Is.is;
 
 public class ShiptCoding {
@@ -95,6 +98,9 @@ public class ShiptCoding {
                 driver.navigate().back();
             }
 
+
+
+
  //           WebElement searchCatagory = driver.findElement(By.cssSelector("#homeIonContent > div > div > shipt-web-subheader > div > div > button.change-address-web-header.address-bar-icon.button.button-icon.icon.dark"));
  //           searchCatagory.click();
 //            searchCatagory.sendKeys("eggs");
@@ -107,8 +113,23 @@ public class ShiptCoding {
             else
                 System.out.println("Catagory is not visible");
 
- //           WebElement beer = driver.findElement(By.linkText("Beer"));  //this doesn't work!!!!!
- //           System.out.println(beer.isDisplayed());
+//            WebElement stuff4 = driver.findElement(By.className("item category-list-item item-icon-right dark wrap ng-binding"));
+
+            List<WebElement> ionlist = driver.findElements(By.tagName("ion-item"));
+            for(WebElement temp: ionlist)  {
+                System.out.println(temp.getText());
+                if (temp.getText().equals("Snacks"))
+                    System.out.println("Snacks is here");
+                else
+                    System.out.println("Snacks not found");
+
+
+            }
+
+ //         System.out.println(ionlist.get(1).getText());
+ //           System.out.println(ionlist.get(1));
+ //           sleep(5000);
+ //         ionlist.get(2).click();
 //        driver.navigate().back();
  //       sleep(5000);
 //        driver.quit();
