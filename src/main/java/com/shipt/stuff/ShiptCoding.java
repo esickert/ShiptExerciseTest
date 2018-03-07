@@ -116,15 +116,15 @@ public class ShiptCoding {
 //            WebElement stuff4 = driver.findElement(By.className("item category-list-item item-icon-right dark wrap ng-binding"));
 
             List<WebElement> ionlist = driver.findElements(By.tagName("ion-item"));
+
             for(WebElement temp: ionlist)  {
                 System.out.println(temp.getText());
                 if (temp.getText().equals("Snacks"))
                     System.out.println("Snacks is here");
                 else
                     System.out.println("Snacks not found");
-
-
             }
+
 
  //         System.out.println(ionlist.get(1).getText());
  //           System.out.println(ionlist.get(1));
