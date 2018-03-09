@@ -62,6 +62,7 @@ public class ShiptCoding {
 
             sleep(3000);
             page.click();
+//            if ()**********************************************
 
             WebElement coke = driver.findElement(By.xpath("//*[@id=\"homeIonContent\"]/div/div/div/div[1]/div[2]/div/div[1]/ion-item/div[1]/div[2]/button[2]"));
  //           String dietCoke = coke.getText();  //it's failing here!!!!!!!!!!!!!!
