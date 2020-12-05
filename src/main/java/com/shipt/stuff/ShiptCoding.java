@@ -19,7 +19,7 @@ public class ShiptCoding {
   //      }
 
     }
-//**********************************************************************TEST
+//*********************************************************TEST
     public static void shiptLogin() throws Exception {
 
         String url = "http://www.shipt.com";
